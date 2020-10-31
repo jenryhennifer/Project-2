@@ -74,7 +74,8 @@ $(document).ready(function() {
     //like button
     var likeBtn = $("<button>");
     likeBtn.text("like");
-    likeBtn.addClass("add btn btn-success")
+    likeBtn.addClass("btn btn-success");
+    likeBtn.attr("id", "likeBtn");
 
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
@@ -82,6 +83,8 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
+    var likesPost = $("<h5>");
+    likesPost.attr("id", "likesPost");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostAuthor = $("<h5>");
@@ -108,6 +111,14 @@ $(document).ready(function() {
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post);
+    //likes counter and event listener
+    var likesCount = 0;
+    var likeBtn = document.getElementById("likeBtn");
+    likeBtn.on("click", function(){
+      likesCount++;
+      $("#likesPost").text("Likes: " + likesCount);
+    });
+
     return newPostCard;
   }
 
@@ -127,6 +138,9 @@ $(document).ready(function() {
       .parent()
       .data("post");
     window.location.href = "/cms?post_id=" + currentPost.id;
+  }
+  function handlePoseLike(){
+    
   }
 
   // This function displays a message when there are no posts
