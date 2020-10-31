@@ -12,11 +12,11 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, " "));
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   app.get("/allCategories", function(req, res) {
-    res.sendFile(path.join(__dirname, " "));
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   // will contain posts for specific category
