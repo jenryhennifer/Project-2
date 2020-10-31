@@ -21,6 +21,11 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+//use sessions to keep track of user login
+app.use(passport.initialize());
+
+app.use(passport.session());
+
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
