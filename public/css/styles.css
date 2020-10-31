@@ -57,3 +57,11 @@ button.edit {
 #createPostBtn {
   margin-top: 2em;
 }
+
+#backBtn {
+  margin-bottom: 2em;
+}
+
+.textBox {
+  margin-bottom: 2em;
+}
