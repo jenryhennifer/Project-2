@@ -26,6 +26,7 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/categoryApiRoutes.js")(app);
 require("./routes/postApiRoutes.js")(app);
+require("./routes/commentApiRoutes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

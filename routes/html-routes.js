@@ -10,6 +10,11 @@ var path = require("path");
 // =============================================================
 module.exports = function(app) {
 
+// <<<<<<< indexJs
+  // app.get("/allCategories", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/blog.html"));
+  // });
+=======
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/blog.html"));
@@ -18,14 +23,22 @@ module.exports = function(app) {
   app.get("/allCategories", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
+// >>>>>>> main
 
   // will contain posts for specific category
   app.get("/category/:id", function(req, res) {
-    res.sendFile(path.join(__dirname, " "));
+    console.log('/category/:id');
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/post/:id", function(req, res) {
+    console.log('/post/:id');
     res.sendFile(path.join(__dirname, " "));
+  });
+
+  app.get("/", function(req, res) {
+    console.log('/');
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
 };
