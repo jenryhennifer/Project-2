@@ -4,13 +4,12 @@ var path = require("path");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, " "));
-    console.log(__dirname)
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // recieve information on all categories
   app.get("/allCategories", function(req, res) {
-    res.sendFile(path.join(__dirname, " "));
+    res.sendFile(path.join(__dirname, ""));
   });
 
   // will contain posts for specific category
