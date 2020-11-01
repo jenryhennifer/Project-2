@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -22,9 +23,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //use sessions to keep track of user login
-app.use(passport.initialize());
+//app.use(passport.initialize());
 
-app.use(passport.session());
+//app.use(passport.session());
 
 // Routes
 // =============================================================

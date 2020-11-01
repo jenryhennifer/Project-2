@@ -1,7 +1,7 @@
-var bcryt = requrie('bcryptjs');
+var bcryt = require('bcryptjs');
 
 module.exports = function(sequelize, DataTypes){
-    var User = sequelizze.define('User', {
+    var User = sequelize.define('User', {
         userName: {
             type: DataTypes.STRING,
             allowNull: false,
