@@ -16,9 +16,15 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   })
 
+  app.get("/whims", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/whims.html"));
+  })
+
   app.get("/allCategories", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.sendFile(path.join(__dirname, "../public/categorylist.html"));
   });
+
+  
 // >>>>>>> main
 
   // will contain posts for specific category
