@@ -71,6 +71,11 @@ $(document).ready(function() {
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
+    //like button
+    var likeBtn = $("<button>");
+    likeBtn.text("like");
+    likeBtn.addClass("add btn btn-success")
+
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
     deleteBtn.addClass("delete btn btn-danger");
@@ -94,6 +99,7 @@ $(document).ready(function() {
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
+    newPostCardHeading.append(likeBtn);
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
