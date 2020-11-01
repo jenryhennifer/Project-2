@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/jenryhennifer/Project-2#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.0.0",
+=======
+    "bcryptjs": "^2.4.3",
+>>>>>>> 48bad4d8dd034abd4203e2ce7f37f02479c009e5
     "bulma": "^0.9.1",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
