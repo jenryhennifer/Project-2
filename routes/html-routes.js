@@ -10,9 +10,20 @@ var path = require("path");
 // =============================================================
 module.exports = function(app) {
 
+// <<<<<<< indexJs
   // app.get("/allCategories", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));
   // });
+=======
+
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  });
+
+  app.get("/allCategories", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  });
+// >>>>>>> main
 
   // will contain posts for specific category
   app.get("/category/:id", function(req, res) {
