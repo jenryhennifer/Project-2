@@ -57,9 +57,8 @@ $(document).ready(function() {
         console.log('data[i].id, currentCategory', data[i].id.toString(), currentCategory.toString());
         let catElement = $("<p>");
         let catElementAnchor = $("<a>");
-        //catElement.addClass("button");
         if (data[i].id.toString() === currentCategory.toString()) {
-          catElement.addClass("has-text-danger");
+          catElementAnchor.addClass("has-text-danger");
         }
         catElementAnchor.text(data[i].name);
         catElementAnchor.attr('href', `/category/${data[i].id}`);
