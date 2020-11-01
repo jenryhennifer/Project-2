@@ -70,3 +70,20 @@ button.edit {
   padding-top: 50px;
   padding-left: 50px;
 }
+
+#footer-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: white;
+  text-align: center;
+}
