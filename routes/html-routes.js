@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/allCategories", function(req, res) {
@@ -28,10 +28,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, " "));
   });
 
-  app.get("/", function(req, res) {
-    console.log('/');
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
+  // app.get("/", function(req, res) {
+  //   console.log('/');
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
+  // });
   app.get("/about", function(req, res){
     res.sendFile(path.join(__dirname, "../public/about.html"));
   })
