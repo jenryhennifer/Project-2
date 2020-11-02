@@ -5,8 +5,8 @@ module.exports = function(app) {
 
   app.get("/api/whim", function(req, res) {
     var query = {};
-    if (req.query.category_id) {
-      query.CategoryID = req.query.category_id;
+    if (req.query.categoryId) {
+      query.CategoryID = req.query.categoryId;
     }
     db.Whim.findAll({
       where: query,
