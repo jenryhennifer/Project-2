@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     var signUpButton = $('.signUpButton');
-    var emailInput = $('#email')
-    var passwordInput = $('#password');
+    var emailInput = $('input#email')
+    var passwordInput = $('input#password');
 
     signUpButton.on('click', function(event){
         event.preventDefault();
