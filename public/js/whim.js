@@ -94,6 +94,7 @@ $(document).ready(function() {
     console.log('pathArray', pathArray);
     currentCategoryId = pathArray[2] || null;
     getAndRenderPost();
+    getAndRenderComments();
   }
 
   init();

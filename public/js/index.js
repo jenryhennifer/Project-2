@@ -38,13 +38,16 @@ $(document).ready(function() {
     $.get('/api/whim' + queryURL, function(data) {
       let postBox = $('#postBox');
       postBox.empty();
+      console.log('postData',data);
       for(let i = 0; i < data.length; i++) {
+        let currentWhim = data[i].id;
         let postEl = $('<div>');
         postEl.addClass('box');
         let postElTitle = $('<h1>');
         let postElLink = $('<a>');
         postElLink.text(data[i].title);
-        postElLink.attr('href', '/whim/' + currentCategory);
+        postElLink.attr('id', 'postElLink');
+        postElLink.attr('href', '/whim/' + currentWhim);
         postElTitle.append(postElLink);
         let postElBody = $('<h1>');
         postElBody.text(data[i].body);
@@ -72,7 +75,7 @@ $(document).ready(function() {
       CategoryId: currentCategory,
     }
     $.post('/api/whim', newPost, function(data, status) {
-      console.log(data, status);
+      console.log('createPost', data, status);
       // getAndRenderPosts();
       titleInput.val('');
       bodyInput.val('');
