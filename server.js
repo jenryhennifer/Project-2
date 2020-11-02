@@ -29,7 +29,7 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./routes/htmlRoutes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/categoryApiRoutes.js")(app);
 require("./routes/whimApiRoutes.js")(app);
 require("./routes/commentApiRoutes.js")(app);

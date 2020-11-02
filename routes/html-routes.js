@@ -9,31 +9,28 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 
   app.get("/allCategories", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.sendFile(path.join(__dirname, "/"));
   });
 // >>>>>>> main
 
   // will contain posts for specific category
   app.get("/category/:id", function(req, res) {
     console.log('/category/:id');
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 
-  app.get("/post/:id", function(req, res) {
+  app.get("/whim/:id", function(req, res) {
     console.log('/post/:id');
-    res.sendFile(path.join(__dirname, " "));
+    res.sendFile(path.join(__dirname, "../public/whim.html"));
   });
 
-  app.get("/", function(req, res) {
-    console.log('/');
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
   app.get("/about", function(req, res){
     res.sendFile(path.join(__dirname, "../public/about.html"));
-  })
+  });
+
 };
 
