@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var signUp = $('.signUp');
+    var signUp = $('button.signUp');
     var emailInput = $('input#email')
     var passwordInput = $('input#password');
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
             email: email,
             password: password
         }).then(function(data){
-            window.location.replace('/main.html')
+            window.location.replace('/main')
         })
     }
 })
