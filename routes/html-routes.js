@@ -2,7 +2,6 @@ var path = require("path");
 
 module.exports = function(app) {
 
-// <<<<<<< indexJs
   // app.get("/allCategories", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));
   // });
@@ -28,7 +27,6 @@ module.exports = function(app) {
   });
 
   
-// >>>>>>> main
 
   // will contain posts for specific category
   app.get("/category/:id", function(req, res) {
@@ -53,4 +51,3 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/about.html"));
   })
 };
-

@@ -22,5 +22,4 @@ module.exports = function(app) {
   app.get("/whim/:id", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/whim.html"));
   });
-  
 };
