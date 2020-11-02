@@ -11,15 +11,15 @@
   <body>
     <header>
       <div class='columns'>
-        <div class='column is-half'>
+        <div class='column'>
           <img id='indexLogo' src='/img/whimItLogo.png' width='150px'>
         </div>
-        <div id='nav' class='column is-half'>
-          <a class='button is-info' href='/about'>About</a>
-          <a class='button is-info' href='/contact'>Contact</a>
-        </div>
+        <nav id='nav' class='column'>
+          <a id='loginBtn' class='button is-primary' href='/login'>Sign in</a>
+        </nav>
       </div>
     </header>
+
     <section class="section">
       <div class='columns'>
         <div class='column is-one-fifth'>
@@ -60,5 +60,9 @@
         </div>
       </div>
     </section>
+    <footer id='footer'>
+      <a id='about' href='/about'>About</a>
+      <a id='contact' href='/contact'>Contact</a>
+  </footer>
     <script src="/js/index.js" type="text/javascript"></script>
   </body>
