@@ -67,8 +67,9 @@ button.edit {
 }
 
 #nav{
-  padding-top: 50px;
-  padding-left: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #footer-img{
@@ -83,7 +84,24 @@ button.edit {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(184, 109, 12);
   color: white;
   text-align: center;
+}
+#contact{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#about{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#loginBtn{
+  padding-right: 20px;
+  padding-left: 20px;
+  float: right;
+}
+#main{
+  padding-left:25px;
+  padding-right: 25px;
 }
