@@ -1,31 +1,3 @@
-// temp dummy data
-// const getCategoryData = {
-//   Categories: [
-//     {id: 1, name: 'Category1'},
-//     {id: 2, name: 'Category1'},
-//     {id: 3, name: 'Category1'},
-//     {id: 4, name: 'Category1'},
-//   ],
-// };
-
-// const getPostsData = {
-//   Posts: [
-//     {id: 1, title: 'Title1', description: 'Description1', likes: '1', categoryId: 1},
-//     {id: 2, title: 'Title2', description: 'Description2', likes: '2', categoryId: 2},
-//     {id: 3, title: 'Title3', description: 'Description3', likes: '3', categoryId: 3},
-//     {id: 4, title: 'Title4', description: 'Description4', likes: '4', categoryId: 4},
-//   ],
-// };
-
-// const getCommentsData = {
-//   Comments: [
-//     {id: 1, description: 'Description1', likes: '1', postId: 1},
-//     {id: 2, description: 'Description2', likes: '2', postId: 2},
-//     {id: 3, description: 'Description3', likes: '3', postId: 3},
-//     {id: 4, description: 'Description4', likes: '4', postId: 4},
-//   ],
-// };
-
 $(document).ready(function() {
   //$(document).on("click", "#createPostBtn", createPost);
   let currentCategory = null;
