@@ -9,7 +9,7 @@ $(document).ready(function() {
   $(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the initial list of Authors
-  getAuthors();
+  getCategory();
 
   // A function to handle what happens when the form is submitted to create a new Author
   function handleAuthorFormSubmit(event) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
       return;
     }
     // Calling the upsertAuthor function and passing in the value of the name input
-    upsertAuthor({
+    upsertCategory({
       name: nameInput
         .val()
         .trim()
@@ -27,13 +27,13 @@ $(document).ready(function() {
   }
 
   // A function for creating an author. Calls getAuthors upon completion
-  function upsertAuthor(authorData) {
-    $.post("/api/authors", authorData)
-      .then(getAuthors);
+  function upsertCategory(categoryData) {
+    $.post("/api/authors", categoryData)
+      .then(getCategory);
   }
 
   // Function for creating a new list row for authors
-  function createAuthorRow(authorData) {
+  function createCategoryRow(authorData) {
     var newTr = $("<tr>");
     newTr.data("author", authorData);
     newTr.append("<td>" + authorData.name + "</td>");
@@ -49,11 +49,11 @@ $(document).ready(function() {
   }
 
   // Function for retrieving authors and getting them ready to be rendered to the page
-  function getAuthors() {
+  function getCategory() {
     $.get("/api/authors", function(data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createAuthorRow(data[i]));
+        rowsToAdd.push(createCategoryRow(data[i]));
       }
       renderAuthorList(rowsToAdd);
       nameInput.val("");
