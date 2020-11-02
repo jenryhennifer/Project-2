@@ -38,11 +38,17 @@ $(document).ready(function() {
     $.get('/api/whim' + queryURL, function(data) {
       let postBox = $('#postBox');
       postBox.empty();
+      console.log('postData',data);
       for(let i = 0; i < data.length; i++) {
+        let currentWhim = data[i].id;
         let postEl = $('<div>');
         postEl.addClass('box');
         let postElTitle = $('<h1>');
-        postElTitle.text(data[i].title);
+        let postElLink = $('<a>');
+        postElLink.text(data[i].title);
+        postElLink.attr('id', 'postElLink');
+        postElLink.attr('href', '/whim/' + currentWhim);
+        postElTitle.append(postElLink);
         let postElBody = $('<h1>');
         postElBody.text(data[i].body);
         postElTitle.append(postElBody);
@@ -50,8 +56,7 @@ $(document).ready(function() {
         postBox.append(postEl);
       }
       console.log('getAndRenderPosts', data);
-    })
-
+    });
   }
 
   const showPostInputs = () => {
@@ -70,7 +75,7 @@ $(document).ready(function() {
       CategoryId: currentCategory,
     }
     $.post('/api/whim', newPost, function(data, status) {
-      console.log(data, status);
+      console.log('createPost', data, status);
       // getAndRenderPosts();
       titleInput.val('');
       bodyInput.val('');
@@ -154,32 +159,5 @@ $(document).ready(function() {
   $(document).on("click", "#catDelete", deleteCategory);
   $(document).on("click", "#showCreatePost", showPostInputs);
   $(document).on("click", "#postBtn", createPost);
-  //getPosts();
 
-  // getPosts = () => {
-  //   $.get("/api/whim", function(data) {
-  //     var rowsToAdd = [];
-  //     for (var i = 0; i < data.length; i++) {
-  //       rowsToAdd.push(createPostsRow(data[i]));
-  //     }
-  //     renderAuthorList(rowsToAdd);
-  //     nameInput.val("");
-  //   });
-  // }
-
-  // createPostsRow = () => {
-  //   console.log('works');
-  //   var categoryHeader = $('<h1>Category Name</h1>');
-
-  // }
-
-  // addCategory = () => {
-  //   console.log('works');
-  // }
-
-  // createPost = () => {
-  //   $.post('/api/whim', function(data) {
-      
-  //   });
-  // }
 });
