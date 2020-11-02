@@ -9,64 +9,70 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <body>
-    <header>
-      <div class='columns'>
-        <div class='column'>
-          <img id='indexLogo' src='/img/whimItLogo.png' width='150px'>
-        </div>
-        <nav id='nav' class='column'>
-          <a id='loginBtn' class='button is-primary' href='/login'>Sign in</a>
-        </nav>
-      </div>
-    </header>
-
-    <section class="section">
-      <div class='columns'>
-        <div class='column is-one-fifth'>
-          
-
-          <div class="box">
-            <div id='catBox' class='content'>
-              <!-- Categories box -->
-<!--  indexJs -->
-            </div>
-              <input id='catInput' class="input" type="text" placeholder="Enter category name">
-            </div>
-<!-- main -->
-            <button id="catBtn" class="button is-primary">add category</button>
-            <button id="catDelete" class="button is-light">delete category</button>
-
+    <div class="containter">
+      <header>
+        <div class='columns'>
+          <div class='column'>
+            <img id='indexLogo' src='/img/whimItLogo.png' width='150px'>
           </div>
+          <nav id='nav' class='column'>
+            <a id='loginBtn' class='button is-primary' href='/login'>Sign in</a>
+          </nav>
         </div>
-        <h1 id='categoryName' class='is-size-3'></h1>
-        <div id='postBox' class='column is-three-fifths'>
-        <!-- Post Boxes -->
-        </div>
-        <!-- Create Post -->
-        <section id='createPostInputs' class="section is-hidden">
-          <div class='container'>
-            <div class='columns'>
-              <div class='column'>
-                <h1>Title</h1>
-                <input id='postTitle' class="input textBox" type="text" placeholder="Enter post title">
-                <h1>Description</h1>
-                <textarea id='postDesc' class="textarea textBox" placeholder="Enter post description"></textarea>
-                <button id='postBtn' class="button is-fullwidth is-success">Post</button>
+      </header>
+  
+      <main id="main" class="columns">
+        
+          <div class='column is-narrow'>
+            <h1 class='title'>Category</h1>
+            <hr>
+            <div class="box" style="width: 200px;">
+              <div id='catBox' class='content'>
+                <!-- Categories box -->
+              </div>
+                <input id='catInput' class="input" type="text" placeholder="Enter category name">
+              </div>
+  <!-- main -->
+              <button id="catBtn" class="button is-primary">add category</button>
+              <button id="catDelete" class="button is-light">delete category</button>
+          </div>
+
+          <div class='column'>
+            <h1 class='title'>Whims</h1>
+            <hr>
+            <h2 class='subtitle'>Category: </h2>
+            <h1 id='categoryName' class='is-size-3'></h1>
+            <hr>
+            <div id='postBox' class='column'>
+            <!-- Post Boxes -->
+            </div>
+            <button id='showCreatePost' class="button is-primary">Create new post</button>
+          </div>
+      </main>
+          <!-- Create Post -->
+          <section id='createPostInputs' class="section is-hidden">
+            <div class='container'>
+              <div class='columns'>
+                <div class='column'>
+                  <h1>Title</h1>
+                  <input id='postTitle' class="input textBox" type="text" placeholder="Enter post title">
+                  <h1>Description</h1>
+                  <textarea id='postDesc' class="textarea textBox" placeholder="Enter post description"></textarea>
+                  <button id='postBtn' class="button is-fullwidth is-success">Post</button>
+                </div>
               </div>
             </div>
+          </section>
+          <div class='column'>
+            <button id='logoutBtn' class="button is-link">Log Out</button>
           </div>
-        </section>
-        <button id='showCreatePost' class="button is-primary">Create new post</button>
-
-        <div class='column is-one-fifth'>
-          <button id='logoutBtn' class="button is-link">Log Out</button>
         </div>
-      </div>
-    </section>
-
-    <footer id='footer'>
-      <a id='about' href='/about'>About</a>
-      <a id='contact' href='/contact'>Contact</a>
-  </footer>
+      
+  
+      <footer id='footer'>
+        <a id='about' href='/about'>About</a>
+        <a id='contact' href='/contact'>Contact</a>
+    </footer>
+    </div>
     <script src="/js/main.js" type="text/javascript"></script>
   </body>
