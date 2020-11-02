@@ -17,6 +17,7 @@ $(document).ready(function() {
         postEl.addClass('box');
         let postElTitle = $('<h1>');
         let postElLink = $('<a>');
+        postElLink.addClass('is-size-4');
         postElLink.text(data[i].title);
         postElLink.attr('id', 'postElLink');
         postElLink.attr('href', '/whim/' + currentWhim);
