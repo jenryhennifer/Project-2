@@ -30,35 +30,38 @@
               <!-- Categories box -->
 <!--  indexJs -->
             </div>
-            <input id='catInput' class="input" type="text" placeholder="Enter category name">
-              <p>category 1</p>
-              <p>category 1</p>
-              <p>category 1</p>
-              <p>category 1</p>
-              <p>category 1</p>
+              <input id='catInput' class="input" type="text" placeholder="Enter category name">
             </div>
 <!-- main -->
             <button id="catBtn" class="button is-primary">add category</button>
+            <button id="catDelete" class="button is-light">delete category</button>
 
           </div>
         </div>
+        <h1 id='categoryName' class='is-size-3'></h1>
         <div id='postBox' class='column is-three-fifths'>
-          <h1 id='categoryName' class='is-size-3'>Category Name</h1>
-          <div class='box'>
-            <h1>Post 1</h1>
-          </div>
-          <div class='box'>
-            <h1>Post 2</h1>
-          </div>
-          <div class='box'>
-            <h1>Post 3</h1>
-          </div>
-          <button id='createPostBtn' class="button is-primary">Create new post</button>
+        <!-- Post Boxes -->
         </div>
+        <!-- Create Post -->
+        <section id='createPostInputs' class="section is-hidden">
+          <div class='container'>
+            <div class='columns'>
+              <div class='column'>
+                <h1>Title</h1>
+                <input id='postTitle' class="input textBox" type="text" placeholder="Enter post title">
+                <h1>Description</h1>
+                <textarea id='postDesc' class="textarea textBox" placeholder="Enter post description"></textarea>
+                <button id='postBtn' class="button is-fullwidth is-success">Post</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <button id='showCreatePost' class="button is-primary">Create new post</button>
         <div class='column is-one-fifth'>
           <button id='logoutBtn' class="button is-link">Log Out</button>
         </div>
       </div>
     </section>
+
     <script src="/js/index.js" type="text/javascript"></script>
   </body>

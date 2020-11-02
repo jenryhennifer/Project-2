@@ -36,7 +36,7 @@ module.exports = function(app) {
   });
 
   app.delete("/api/category/:id", function(req, res) {
-    console.log('categoryDelete');
+    console.log('categoryDeleteGet');
     db.Category.destroy({
       where: {
         id: req.params.id
