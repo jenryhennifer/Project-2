@@ -30,5 +30,8 @@ module.exports = function(app) {
   app.get("/about", function(req, res){
     res.sendFile(path.join(__dirname, "../public/about.html"));
   })
+  app.get("/whim/:id",function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/whim.html"));
+  })
 };
 
