@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -21,11 +22,17 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+//use sessions to keep track of user login
+//app.use(passport.initialize());
+
+//app.use(passport.session());
+
 // Routes
 // =============================================================
-require("./routes/html-routes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 require("./routes/categoryApiRoutes.js")(app);
-require("./routes/postApiRoutes.js")(app);
+require("./routes/whimApiRoutes.js")(app);
+require("./routes/commentApiRoutes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
