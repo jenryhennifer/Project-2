@@ -31,3 +31,52 @@
     go to /category/${currentCategoryId}
 
 */
+$(document).ready(function() {
+  let currentCategoryId = null;
+
+  const getAndRenderPost = () => {
+    $.get('/api/whim/' + currentCategoryId, function(data) {
+      console.log(data);
+      let postBlock = $('#postBlock');
+      let postBlockTitle = $('<h1>');
+      postBlockTitle.addClass('is-size-3');
+      postBlockTitle.text(data.title);
+      let postBlockBody = $('<p>');
+      postBlockBody.text(data.body);
+      postBlock.append(postBlockTitle);
+      postBlock.append(postBlockBody);
+    });
+  }
+
+  const createComment = () => {
+    let commentBox = $('<div>');
+    commentBox.addClass('box');
+    let commentInput = $('#commentInput');
+    commentInput.addClass('is-hidden');
+  }
+  
+  const showCommentInput = () => {
+    let commentInput = $('#commentInput');
+    commentInput.removeClass('is-hidden');
+  }
+
+  const init = () => {
+    let postBlock = $('#postBlock');
+    postBlock.empty();
+    const pathArray = window.location.pathname.split('/');
+    console.log('pathArray', pathArray);
+    currentCategoryId = pathArray[2] || null;
+    getAndRenderPost();
+  }
+
+  init();
+  // Back Button 
+  $(document).on("click", "#backBtn", function() {
+    window.location.href = `/category/${currentCategoryId}`;
+  });
+  // Add Comment Button
+  $(document).on("click", "#createCommentBtn", showCommentInput);
+  $(document).on("click", "#addCommentBtn", createComment);
+});
+
+

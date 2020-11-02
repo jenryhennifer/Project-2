@@ -42,7 +42,10 @@ $(document).ready(function() {
         let postEl = $('<div>');
         postEl.addClass('box');
         let postElTitle = $('<h1>');
-        postElTitle.text(data[i].title);
+        let postElLink = $('<a>');
+        postElLink.text(data[i].title);
+        postElLink.attr('href', '/whim/' + currentCategory);
+        postElTitle.append(postElLink);
         let postElBody = $('<h1>');
         postElBody.text(data[i].body);
         postElTitle.append(postElBody);
@@ -50,8 +53,7 @@ $(document).ready(function() {
         postBox.append(postEl);
       }
       console.log('getAndRenderPosts', data);
-    })
-
+    });
   }
 
   const showPostInputs = () => {
