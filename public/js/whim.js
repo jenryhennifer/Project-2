@@ -48,16 +48,43 @@ $(document).ready(function() {
     });
   }
 
+  const getAndRenderComments = () => {
+    let queryURL = '/?whimId=' + currentCategoryId;
+    $.get('/api/comment' + queryURL, function(data) {
+      console.log(data);
+      let commentBlock = $('#commentBlock');
+      commentBlock.empty();
+      for(let i = 0; i < data.length; i++) {
+        let commentBox = $('<div>');
+        commentBox.addClass('box');
+        let commentBoxText = $('<p>');
+        commentBoxText.text(data[i].body);
+        commentBox.append(commentBoxText);
+        commentBlock.append(commentBox);
+      }
+    })
+  }
+
   const createComment = () => {
-    let commentBox = $('<div>');
-    commentBox.addClass('box');
-    let commentInput = $('#commentInput');
-    commentInput.addClass('is-hidden');
+    let commentInputText = $('#commentInputText')
+    const body = commentInputText.val();
+    const newComment = {
+      body,
+      WhimId: currentCategoryId
+    }
+    $.post('/api/comment', newComment, function(data, status) {
+      console.log(data, status);
+      commentInputText.val('');
+      // Hiding comment inputs
+      let commentInputBlock = $('#commentInputBlock');
+      commentInputBlock.addClass('is-hidden');
+      getAndRenderComments();
+    })
   }
   
   const showCommentInput = () => {
-    let commentInput = $('#commentInput');
-    commentInput.removeClass('is-hidden');
+    let commentInputBlock = $('#commentInputBlock');
+    commentInputBlock.removeClass('is-hidden');
   }
 
   const init = () => {

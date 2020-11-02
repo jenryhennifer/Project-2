@@ -12,17 +12,17 @@
     <section class="section">
       <div class='container'>
         <div class='columns'>
-          <div id='mainBlock' class='column'>
+          <div class='column'>
             <button id='backBtn' class="button is-link">Back</button>
             <!-- Post and Comment Boxes -->
-            <div class='box'>
-              <div id='postBlock' class='content'></div>
-            </div>
-            <div class='box'>
-              <div id='commentBlock' class='content'></div>
-            </div>
-            <section id='commentInput' class='section is-hidden'>
-              <textarea class="textarea" placeholder="Enter comment here"></textarea>
+            <section id='mainBlock'class="section">
+              <div class='box'>
+                <div id='postBlock' class='content'></div>
+              </div>
+              <section id='commentBlock'></section>
+            </section>
+            <section id='commentInputBlock' class='section is-hidden'>
+              <textarea id='commentInputText' class="textarea" placeholder="Enter comment here"></textarea>
               <button id='addCommentBtn' class="button is-light is-fullwidth">Add comment</button>
             </section>
             <button id='createCommentBtn' class="button is-fullwidth is-success">Create a comment</button>
