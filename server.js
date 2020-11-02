@@ -1,10 +1,6 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
 var express = require("express");
+var passport = require("passport");
+
 
 
 // Sets up the Express App
@@ -23,9 +19,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //use sessions to keep track of user login
-//app.use(passport.initialize());
-
-//app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================
@@ -33,6 +28,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/categoryApiRoutes.js")(app);
 require("./routes/whimApiRoutes.js")(app);
 require("./routes/commentApiRoutes.js")(app);
+require('./routes/userApiRoutes.js')(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
