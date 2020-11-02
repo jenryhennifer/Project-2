@@ -159,32 +159,5 @@ $(document).ready(function() {
   $(document).on("click", "#catDelete", deleteCategory);
   $(document).on("click", "#showCreatePost", showPostInputs);
   $(document).on("click", "#postBtn", createPost);
-  //getPosts();
 
-  // getPosts = () => {
-  //   $.get("/api/whim", function(data) {
-  //     var rowsToAdd = [];
-  //     for (var i = 0; i < data.length; i++) {
-  //       rowsToAdd.push(createPostsRow(data[i]));
-  //     }
-  //     renderAuthorList(rowsToAdd);
-  //     nameInput.val("");
-  //   });
-  // }
-
-  // createPostsRow = () => {
-  //   console.log('works');
-  //   var categoryHeader = $('<h1>Category Name</h1>');
-
-  // }
-
-  // addCategory = () => {
-  //   console.log('works');
-  // }
-
-  // createPost = () => {
-  //   $.post('/api/whim', function(data) {
-      
-  //   });
-  // }
 });
