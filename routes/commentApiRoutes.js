@@ -4,7 +4,7 @@ module.exports = function(app){
     app.get('/api/comment',function(req,res){
         var query = {};
         if(req.query.whim_id){
-            query.WhimId = req.query.whim_id;
+            query.WhimId = req.query.whimId;
         }
         db.Comment.findAll({
             where: query,

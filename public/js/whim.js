@@ -33,10 +33,13 @@
 */
 $(document).ready(function() {
   let currentCategoryId = null;
+  let currentWhimId = null;
 
   const getAndRenderPost = () => {
-    $.get('/api/whim/' + currentCategoryId, function(data) {
-      console.log(data);
+    $.get('/api/whim/' + currentWhimId, function(data) {
+      console.log('postData', data);
+      currentCategoryId = data.CategoryId;
+      console.log('currentCategoryId', currentCategoryId);
       let postBlock = $('#postBlock');
       let postBlockTitle = $('<h1>');
       postBlockTitle.addClass('is-size-3');
@@ -49,8 +52,8 @@ $(document).ready(function() {
   }
 
   const getAndRenderComments = () => {
-    let queryURL = '/?whimId=' + currentCategoryId;
-    $.get('/api/comment' + queryURL, function(data) {
+    //let queryURL = '/?whimId=' + currentWhimId;
+    $.get('/api/comment', {whimId: currentWhimId}, function(data) {
       console.log(data);
       let commentBlock = $('#commentBlock');
       commentBlock.empty();
@@ -70,7 +73,7 @@ $(document).ready(function() {
     const body = commentInputText.val();
     const newComment = {
       body,
-      WhimId: currentCategoryId
+      WhimId: currentWhimId
     }
     $.post('/api/comment', newComment, function(data, status) {
       console.log(data, status);
@@ -90,9 +93,11 @@ $(document).ready(function() {
   const init = () => {
     let postBlock = $('#postBlock');
     postBlock.empty();
+    let commentBlock = $('#commentBlock');
+    commentBlock.empty();
     const pathArray = window.location.pathname.split('/');
     console.log('pathArray', pathArray);
-    currentCategoryId = pathArray[2] || null;
+    currentWhimId = pathArray[2] || null;
     getAndRenderPost();
     getAndRenderComments();
   }
