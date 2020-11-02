@@ -13,28 +13,28 @@ $(document).ready(function() {
   // The code below handles the case where we want to get blog posts for a specific author
   // Looks for a query param in the url for author_id
   var url = window.location.search;
-  var authorId;
-  if (url.indexOf("?author_id=") !== -1) {
+  var categoryId;
+  if (url.indexOf("?category_id=") !== -1) {
     authorId = url.split("=")[1];
     getPosts(authorId);
   }
   // If there's no authorId we just get all posts as usual
   else {
-    getPosts();
+    getWhims();
   }
 
 
   // This function grabs posts from the database and updates the view
-  function getPosts(author) {
-    authorId = author || "";
-    if (authorId) {
-      authorId = "/?author_id=" + authorId;
+  function getWhims(category) {
+    categoryId = category || "";
+    if (categoryId) {
+      categoryId = "/?category_id=" + categoryId;
     }
-    $.get("/api/posts" + authorId, function(data) {
+    $.get("/api/posts" + categoryId, function(data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
-        displayEmpty(author);
+        displayEmpty(category);
       }
       else {
         initializeRows();
