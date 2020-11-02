@@ -19,10 +19,9 @@ module.exports = function(app){
 
     app.get('/logout', function(req,res){
         req.logout();
-
         res.redirect('/')
     })
-    app.get('api/userData', function(req,res){
+    app.get('/api/userData', function(req,res){
         if(!req.user){
             res.json({});
         }else{

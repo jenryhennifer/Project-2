@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
-    var signUp = $('button.signUp');
-    var emailInput = $('input#email')
-    var passwordInput = $('input#password');
+    var signUpButton = $('.signUpButton');
+    var emailInput = $('#email')
+    var passwordInput = $('#password');
 
-    signUp.on('click', function(event){
+    signUpButton.on('click', function(event){
         event.preventDefault();
+        console.log('clicked')
         var data = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
