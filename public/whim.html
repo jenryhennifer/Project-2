@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WhimIt</title>
-    <!-- Bulma stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    
-  <body style= "font-family: 'Hind', sans-serif;">
-    <section class="section">
-      <div class='container'>
-        <div class='columns'>
-          <div class='column'>
-            <button id='backBtn' class="button is-link">Back</button>
-            <!-- Post and Comment Boxes -->
-            <section id='mainBlock'class="section">
-              <div class='box'>
-                <div id='postBlock' class='content'></div>
-              </div>
-              <section id='commentBlock'></section>
-            </section>
-            <section id='commentInputBlock' class='section is-hidden'>
-              <textarea id='commentInputText' class="textarea" placeholder="Enter comment here"></textarea>
-              <button id='addCommentBtn' class="button is-light is-fullwidth">Add comment</button>
-            </section>
-            <button id='createCommentBtn' class="button is-fullwidth is-success">Create a comment</button>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhimIt</title>
+  <!-- Bulma stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+<body style="font-family: 'Hind', sans-serif;">
+  <section class="section">
+    <div class='container'>
+      <div class='columns'>
+        <div class='column'>
+          <button id='backBtn' class="button is-link">Back</button>
+          <!-- Post and Comment Boxes -->
+          <section id='mainBlock' class="section">
+            <div class='box'>
+              <div id='postBlock' class='content'></div>
+            </div>
+            <section id='commentBlock'></section>
+          </section>
+          <section id='commentInputBlock' class='section is-hidden'>
+            <textarea id='commentInputText' class="textarea" placeholder="Enter comment here"></textarea>
+            <button id='addCommentBtn' class="button is-light is-fullwidth">Add comment</button>
+          </section>
+          <button id='createCommentBtn' class="button is-fullwidth is-success">Create a comment</button>
         </div>
       </div>
-    </section>
-    <footer id='footer'>
-      <a id='about' href='/about'>About</a>
-      <a id='contact' href='/contact'>Contact</a>
-    </footer>
-    <script src="/js/whim.js" type="text/javascript"></script>
-  </body>
+    </div>
+  </section>
+  <footer id='footer'>
+    <a id='about' href='/about'>About</a>
+    <a id='contact' href='/contact'>Contact</a>
+  </footer>
+  <script src="/js/whim.js" type="text/javascript"></script>
+</body>
