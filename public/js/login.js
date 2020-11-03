@@ -14,25 +14,18 @@ $(document).ready(function () {
       return;
     }
 
-    loginWhim(data.email,data.password);
+    loginWhim(data.email, data.password);
     emailData.val('');
-    passwordData.val('')
+    passwordData.val('');
   });
 
-  function loginWhim(email, password){
-      $.post('/api/login',{
-          email: email,
-          password: password
-      }).then(function(){
-          //relocate to the home page of whim
-          window.location.replace('')
-      })
+  function loginWhim(email, password) {
+    $.post('/api/login', {
+      email: email,
+      password: password,
+    }).then(function () {
+      //relocate to the home page of whim
+      window.location.replace('/main');
+    });
   }
-
-
-
-
-
-
-
 });
