@@ -32,8 +32,8 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(240, 169, 77);
-  color: white;
+  background-color: #E78201;
+  color: lightgray;
   text-align: center;
 }
 
@@ -57,3 +57,23 @@
   padding-left:25px;
   padding-right: 25px;
 }
+
+#logoutBtn, #loginBtn, #catBtn, #postBtn, #showCreatePost, #backBtn, #createCommentBtn, #contactHome, #contactAbout, #aboutHome, #aboutContact {
+  background-color: transparent;
+  color: #E78201;
+  border-color: #E78201;
+  font-weight: bold;
+}
+
+#catDelete{
+  background-color: #E78201;
+  color:white
+}
+
+#about, #contact{
+  color: white;
+}
+/* 
+.box{
+  background-color: #DADADA
+} */
