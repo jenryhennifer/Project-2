@@ -18,7 +18,7 @@ WhimIt is a program to reproduce some of the functionalities of the popular foru
 ## Getting Started
 * [Github Repository](https://github.com/jenryhennifer/Project-2/pull/19)
 * [Heroku Deployed Link](https://obscure-citadel-38973.herokuapp.com/)
-* [Usage Demo Video]()
+* [Usage Demo Video](https://drive.google.com/file/d/1MEol4kxfMhk_hDraNP13MrBBKiYFvNri/view)
 
 ## Tech Used
 
